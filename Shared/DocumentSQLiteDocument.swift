@@ -16,19 +16,18 @@ extension UTType {
 }
 
 struct DocumentSQLiteDocument: FileDocument {
-    var inMemoryDBQueue = DatabaseQueue()
     var textModel: TextModel
     
     init() {
         textModel = TextModel(text: "")
         
         do {
-            try inMemoryDBQueue.write { db in
+            try DB.shared.inMemoryDBQueue.write { db in
                 try textModel.insert(db)
             }
         } catch {
             // TODO: actually throw the error
-//            throw CocoaError(error)
+            print(error)
         }
     }
     
@@ -43,24 +42,24 @@ struct DocumentSQLiteDocument: FileDocument {
         }
         
         do {
-            try DatabaseQueue(path: dbPath).backup(to: inMemoryDBQueue)
-            try inMemoryDBQueue.read { db in
+            try DatabaseQueue(path: dbPath).backup(to: DB.shared.inMemoryDBQueue)
+            try DB.shared.inMemoryDBQueue.read { db in
                 if let fetchedModel = try TextModel.fetchOne(db) {
                     textModel = fetchedModel
                 }
                 else {
-                    try inMemoryDBQueue.write { db in
+                    try DB.shared.inMemoryDBQueue.write { db in
                         try textModel.insert(db)
                     }
                 }
             }
         } catch {
             // TODO: actually throw the error
-//            throw CocoaError(error)
+            print(error)
         }
     }
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-        return SqliteFileWrapper(fromDatabaseQueue: inMemoryDBQueue)
+        return SqliteFileWrapper(fromDatabaseQueue: DB.shared.inMemoryDBQueue)
     }
 }
