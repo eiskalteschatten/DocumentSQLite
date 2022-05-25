@@ -25,6 +25,8 @@ final class DatabaseManager {
             try db.create(table: "testDocument") { t in
                 t.autoIncrementedPrimaryKey("id")
                 t.column("text", .text)
+                t.column("createdAt", .date)
+                t.column("updatedAt", .date)
             }
         }
 
