@@ -21,8 +21,8 @@ final class DatabaseManager {
     static var migrator: DatabaseMigrator {
         var migrator = DatabaseMigrator()
 
-        migrator.registerMigration("createTextTable") { db in
-            try db.create(table: "text") { t in
+        migrator.registerMigration("createTables") { db in
+            try db.create(table: "testDocument") { t in
                 t.autoIncrementedPrimaryKey("id")
                 t.column("text", .text)
             }

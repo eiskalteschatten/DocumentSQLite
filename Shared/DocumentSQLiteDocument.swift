@@ -16,15 +16,15 @@ extension UTType {
 }
 
 struct DocumentSQLiteDocument: FileDocument {
-    var textRecord: TextRecord
+    var testDocument: TestDocument
     
     init() {
-        textRecord = TextRecord(text: "")
+        testDocument = TestDocument(text: "")
         
         do {
             try DatabaseManager.shared.setup()
             try DatabaseManager.shared.inMemoryDBQueue.write { db in
-                try textRecord.insert(db)
+                try testDocument.insert(db)
             }
         } catch {
             // TODO: actually throw the error
@@ -35,7 +35,7 @@ struct DocumentSQLiteDocument: FileDocument {
     static var readableContentTypes: [UTType] { [.exampleDB] }
 
     init(configuration: ReadConfiguration) throws {
-        textRecord = TextRecord(text: "")
+        testDocument = TestDocument(text: "")
         
         guard let dbPath = configuration.file.filename
         else {
@@ -45,12 +45,12 @@ struct DocumentSQLiteDocument: FileDocument {
         do {
             try DatabaseQueue(path: dbPath).backup(to: DatabaseManager.shared.inMemoryDBQueue)
             try DatabaseManager.shared.inMemoryDBQueue.read { db in
-                if let fetchedModel = try TextRecord.fetchOne(db) {
-                    textRecord = fetchedModel
+                if let fetchedModel = try TestDocument.fetchOne(db) {
+                    testDocument = fetchedModel
                 }
                 else {
                     try DatabaseManager.shared.inMemoryDBQueue.write { db in
-                        try textRecord.insert(db)
+                        try testDocument.insert(db)
                     }
                 }
             }
