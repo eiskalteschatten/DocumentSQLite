@@ -17,7 +17,9 @@ extension UTType {
 
 struct DocumentSQLiteDocument: FileDocument {
     var inMemoryDBQueue = DatabaseQueue()
-
+    
+    init() {}
+    
     static var readableContentTypes: [UTType] { [.exampleDB] }
 
     init(configuration: ReadConfiguration) throws {

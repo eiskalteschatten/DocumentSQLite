@@ -13,6 +13,7 @@ struct ContentView: View {
     var body: some View {
 //        TextEditor(text: $document.text)
         Text("test")
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
