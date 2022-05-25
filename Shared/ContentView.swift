@@ -11,9 +11,9 @@ struct ContentView: View {
     @Binding var document: DocumentSQLiteDocument
 
     var body: some View {
-//        TextEditor(text: $document.text)
-        Text("test")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        TextEditor(text: $document.textModel.text)
+//        Text("test")
+//            .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

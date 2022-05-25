@@ -9,6 +9,5 @@ import Foundation
 import GRDB
 
 struct TextModel: Codable, FetchableRecord, PersistableRecord {
-  let id: Int64
-  let text: String
+  var text: String
 }
