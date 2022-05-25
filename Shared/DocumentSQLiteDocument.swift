@@ -23,9 +23,6 @@ struct DocumentSQLiteDocument: FileDocument {
         
         do {
             try DatabaseManager.shared.setup()
-            try DatabaseManager.shared.inMemoryDBQueue.write { db in
-                try testDocument.insert(db)
-            }
         } catch {
             // TODO: actually throw the error
             print(error)
