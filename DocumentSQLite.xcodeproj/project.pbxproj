@@ -20,6 +20,7 @@
 		934865F3283E35DD005497A1 /* SqliteFileWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865F2283E35DD005497A1 /* SqliteFileWrapper.swift */; };
 		934865F4283E35DD005497A1 /* SqliteFileWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865F2283E35DD005497A1 /* SqliteFileWrapper.swift */; };
 		934865F7283E368F005497A1 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 934865F6283E368F005497A1 /* GRDB */; };
+		934865FA283E3766005497A1 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 934865F9283E3766005497A1 /* GRDB */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				934865FA283E3766005497A1 /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +64,7 @@
 				934865D5283E1E37005497A1 /* iOS */,
 				934865DC283E1E37005497A1 /* macOS */,
 				934865D4283E1E37005497A1 /* Products */,
+				934865F8283E3766005497A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +107,13 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		934865F8283E3766005497A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +150,9 @@
 			dependencies = (
 			);
 			name = "DocumentSQLite (macOS)";
+			packageProductDependencies = (
+				934865F9283E3766005497A1 /* GRDB */,
+			);
 			productName = "DocumentSQLite (macOS)";
 			productReference = 934865DB283E1E37005497A1 /* DocumentSQLite.app */;
 			productType = "com.apple.product-type.application";
@@ -510,6 +523,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		934865F6283E368F005497A1 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 934865F5283E368F005497A1 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
+		934865F9283E3766005497A1 /* GRDB */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 934865F5283E368F005497A1 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
 			productName = GRDB;

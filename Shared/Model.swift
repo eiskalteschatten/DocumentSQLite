@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import GRDB
 
-struct TextModel {
-  let id: Int32
-  let text: NSString
+struct TextModel: Codable, FetchableRecord, PersistableRecord {
+  let id: Int64
+  let text: String
 }
