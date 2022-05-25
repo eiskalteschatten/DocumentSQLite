@@ -9,8 +9,8 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 extension UTType {
-    static var exampleText: UTType {
-        UTType(importedAs: "com.example.plain-text")
+    static var exampleDB: UTType {
+        UTType(importedAs: "com.example.sqlite")
     }
 }
 
@@ -21,7 +21,7 @@ struct DocumentSQLiteDocument: FileDocument {
         self.text = text
     }
 
-    static var readableContentTypes: [UTType] { [.exampleText] }
+    static var readableContentTypes: [UTType] { [.exampleDB] }
 
     init(configuration: ReadConfiguration) throws {
         guard let data = configuration.file.regularFileContents,
@@ -33,6 +33,9 @@ struct DocumentSQLiteDocument: FileDocument {
     }
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
+//        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+//        .appendingPathComponent("HeroesDatabase.sqlite")
+        
         let data = text.data(using: .utf8)!
         return .init(regularFileWithContents: data)
     }

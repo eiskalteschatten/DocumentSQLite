@@ -15,6 +15,8 @@
 		934865E4283E1E37005497A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865CD283E1E34005497A1 /* ContentView.swift */; };
 		934865E5283E1E37005497A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934865CE283E1E37005497A1 /* Assets.xcassets */; };
 		934865E6283E1E37005497A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934865CE283E1E37005497A1 /* Assets.xcassets */; };
+		934865F0283E1F18005497A1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865EF283E1F18005497A1 /* Model.swift */; };
+		934865F1283E1F18005497A1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865EF283E1F18005497A1 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,7 @@
 		934865DB283E1E37005497A1 /* DocumentSQLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentSQLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		934865DD283E1E37005497A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		934865DE283E1E37005497A1 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		934865EF283E1F18005497A1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 				934865CB283E1E34005497A1 /* DocumentSQLiteApp.swift */,
 				934865CC283E1E34005497A1 /* DocumentSQLiteDocument.swift */,
 				934865CD283E1E34005497A1 /* ContentView.swift */,
+				934865EF283E1F18005497A1 /* Model.swift */,
 				934865CE283E1E37005497A1 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -195,6 +199,7 @@
 				934865DF283E1E37005497A1 /* DocumentSQLiteApp.swift in Sources */,
 				934865E1283E1E37005497A1 /* DocumentSQLiteDocument.swift in Sources */,
 				934865E3283E1E37005497A1 /* ContentView.swift in Sources */,
+				934865F0283E1F18005497A1 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +210,7 @@
 				934865E0283E1E37005497A1 /* DocumentSQLiteApp.swift in Sources */,
 				934865E2283E1E37005497A1 /* DocumentSQLiteDocument.swift in Sources */,
 				934865E4283E1E37005497A1 /* ContentView.swift in Sources */,
+				934865F1283E1F18005497A1 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
