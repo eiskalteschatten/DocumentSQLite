@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import GRDB
 
 // See: https://stackoverflow.com/questions/66359387/swiftui-filedocument-using-sqlite-and-grdb
 class SqliteFileWrapper: FileWrapper {

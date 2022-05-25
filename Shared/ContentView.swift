@@ -11,7 +11,8 @@ struct ContentView: View {
     @Binding var document: DocumentSQLiteDocument
 
     var body: some View {
-        TextEditor(text: $document.text)
+//        TextEditor(text: $document.text)
+        Text("test")
     }
 }
 

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
+import GRDB
 
 extension UTType {
     static var exampleDB: UTType {
@@ -15,24 +16,24 @@ extension UTType {
 }
 
 struct DocumentSQLiteDocument: FileDocument {
-    var text: String
-
-    init(text: String = "Hello, world!") {
-        self.text = text
-    }
+    var inMemoryDBQueue = DatabaseQueue()
 
     static var readableContentTypes: [UTType] { [.exampleDB] }
 
     init(configuration: ReadConfiguration) throws {
-        guard let data = configuration.file.regularFileContents,
-              let string = String(data: data, encoding: .utf8)
+        guard let dbPath = configuration.file.filename
         else {
             throw CocoaError(.fileReadCorruptFile)
         }
-        text = string
+        
+        do {
+            try DatabaseQueue(path: dbPath).backup(to: inMemoryDBQueue)
+        } catch {
+//            throw CocoaError(error)
+        }
     }
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-        SqliteFileWrapper(fromDatabaseQueue: memoryDBQueue)
+        return SqliteFileWrapper(fromDatabaseQueue: inMemoryDBQueue)
     }
 }
