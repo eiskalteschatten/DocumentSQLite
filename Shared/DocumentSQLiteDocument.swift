@@ -48,11 +48,6 @@ struct DocumentSQLiteDocument: FileDocument {
                 if let fetchedModel = try TestDocument.fetchOne(db) {
                     testDocument = fetchedModel
                 }
-                else {
-                    try DatabaseManager.shared.inMemoryDBQueue.write { db in
-                        try testDocument.insert(db)
-                    }
-                }
             }
         } catch {
             // TODO: actually throw the error

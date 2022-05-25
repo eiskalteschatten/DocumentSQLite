@@ -11,7 +11,20 @@ struct ContentView: View {
     @Binding var document: DocumentSQLiteDocument
 
     var body: some View {
-        TextEditor(text: $document.testDocument.text)
+        TextEditor(text: Binding(get: {
+            document.testDocument.text
+        }, set: {
+            document.testDocument.text = $0
+            
+            do {
+                try DatabaseManager.shared.inMemoryDBQueue.write { db in
+                    try document.testDocument.save(db)
+                }
+            } catch {
+                // TODO: throw error
+                print(error)
+            }
+        }))
 //        Text("test")
 //            .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
