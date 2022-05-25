@@ -22,7 +22,8 @@ struct DocumentSQLiteDocument: FileDocument {
         textModel = TextModel(text: "")
         
         do {
-            try DB.shared.inMemoryDBQueue.write { db in
+            try DatabaseManager.shared.setup()
+            try DatabaseManager.shared.inMemoryDBQueue.write { db in
                 try textModel.insert(db)
             }
         } catch {
@@ -42,13 +43,13 @@ struct DocumentSQLiteDocument: FileDocument {
         }
         
         do {
-            try DatabaseQueue(path: dbPath).backup(to: DB.shared.inMemoryDBQueue)
-            try DB.shared.inMemoryDBQueue.read { db in
+            try DatabaseQueue(path: dbPath).backup(to: DatabaseManager.shared.inMemoryDBQueue)
+            try DatabaseManager.shared.inMemoryDBQueue.read { db in
                 if let fetchedModel = try TextModel.fetchOne(db) {
                     textModel = fetchedModel
                 }
                 else {
-                    try DB.shared.inMemoryDBQueue.write { db in
+                    try DatabaseManager.shared.inMemoryDBQueue.write { db in
                         try textModel.insert(db)
                     }
                 }
@@ -60,6 +61,6 @@ struct DocumentSQLiteDocument: FileDocument {
     }
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-        return SqliteFileWrapper(fromDatabaseQueue: DB.shared.inMemoryDBQueue)
+        return SqliteFileWrapper(fromDatabaseQueue: DatabaseManager.shared.inMemoryDBQueue)
     }
 }
