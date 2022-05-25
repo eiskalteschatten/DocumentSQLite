@@ -33,10 +33,6 @@ struct DocumentSQLiteDocument: FileDocument {
     }
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-//        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-//        .appendingPathComponent("HeroesDatabase.sqlite")
-        
-        let data = text.data(using: .utf8)!
-        return .init(regularFileWithContents: data)
+        SqliteFileWrapper(fromDatabaseQueue: memoryDBQueue)
     }
 }

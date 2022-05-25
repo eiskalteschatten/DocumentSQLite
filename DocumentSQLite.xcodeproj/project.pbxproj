@@ -17,6 +17,9 @@
 		934865E6283E1E37005497A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934865CE283E1E37005497A1 /* Assets.xcassets */; };
 		934865F0283E1F18005497A1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865EF283E1F18005497A1 /* Model.swift */; };
 		934865F1283E1F18005497A1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865EF283E1F18005497A1 /* Model.swift */; };
+		934865F3283E35DD005497A1 /* SqliteFileWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865F2283E35DD005497A1 /* SqliteFileWrapper.swift */; };
+		934865F4283E35DD005497A1 /* SqliteFileWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865F2283E35DD005497A1 /* SqliteFileWrapper.swift */; };
+		934865F7283E368F005497A1 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 934865F6283E368F005497A1 /* GRDB */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,7 @@
 		934865DD283E1E37005497A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		934865DE283E1E37005497A1 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		934865EF283E1F18005497A1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		934865F2283E35DD005497A1 /* SqliteFileWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteFileWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				934865F7283E368F005497A1 /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +71,7 @@
 				934865CB283E1E34005497A1 /* DocumentSQLiteApp.swift */,
 				934865CC283E1E34005497A1 /* DocumentSQLiteDocument.swift */,
 				934865CD283E1E34005497A1 /* ContentView.swift */,
+				934865F2283E35DD005497A1 /* SqliteFileWrapper.swift */,
 				934865EF283E1F18005497A1 /* Model.swift */,
 				934865CE283E1E37005497A1 /* Assets.xcassets */,
 			);
@@ -114,6 +120,9 @@
 			dependencies = (
 			);
 			name = "DocumentSQLite (iOS)";
+			packageProductDependencies = (
+				934865F6283E368F005497A1 /* GRDB */,
+			);
 			productName = "DocumentSQLite (iOS)";
 			productReference = 934865D3283E1E37005497A1 /* DocumentSQLite.app */;
 			productType = "com.apple.product-type.application";
@@ -162,6 +171,9 @@
 				Base,
 			);
 			mainGroup = 934865C5283E1E34005497A1;
+			packageReferences = (
+				934865F5283E368F005497A1 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
+			);
 			productRefGroup = 934865D4283E1E37005497A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -198,6 +210,7 @@
 			files = (
 				934865DF283E1E37005497A1 /* DocumentSQLiteApp.swift in Sources */,
 				934865E1283E1E37005497A1 /* DocumentSQLiteDocument.swift in Sources */,
+				934865F3283E35DD005497A1 /* SqliteFileWrapper.swift in Sources */,
 				934865E3283E1E37005497A1 /* ContentView.swift in Sources */,
 				934865F0283E1F18005497A1 /* Model.swift in Sources */,
 			);
@@ -209,6 +222,7 @@
 			files = (
 				934865E0283E1E37005497A1 /* DocumentSQLiteApp.swift in Sources */,
 				934865E2283E1E37005497A1 /* DocumentSQLiteDocument.swift in Sources */,
+				934865F4283E35DD005497A1 /* SqliteFileWrapper.swift in Sources */,
 				934865E4283E1E37005497A1 /* ContentView.swift in Sources */,
 				934865F1283E1F18005497A1 /* Model.swift in Sources */,
 			);
@@ -482,6 +496,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		934865F5283E368F005497A1 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.24.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		934865F6283E368F005497A1 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 934865F5283E368F005497A1 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 934865C6283E1E34005497A1 /* Project object */;
 }
