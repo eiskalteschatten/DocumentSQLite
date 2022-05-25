@@ -21,6 +21,15 @@ struct DocumentSQLiteDocument: FileDocument {
     
     init() {
         textModel = TextModel(text: "")
+        
+        do {
+            try inMemoryDBQueue.write { db in
+                try textModel.insert(db)
+            }
+        } catch {
+            // TODO: actually throw the error
+//            throw CocoaError(error)
+        }
     }
     
     static var readableContentTypes: [UTType] { [.exampleDB] }
@@ -38,6 +47,11 @@ struct DocumentSQLiteDocument: FileDocument {
             try inMemoryDBQueue.read { db in
                 if let fetchedModel = try TextModel.fetchOne(db) {
                     textModel = fetchedModel
+                }
+                else {
+                    try inMemoryDBQueue.write { db in
+                        try textModel.insert(db)
+                    }
                 }
             }
         } catch {
