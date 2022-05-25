@@ -25,8 +25,6 @@ struct ContentView: View {
                 print(error)
             }
         }))
-//        Text("test")
-//            .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
