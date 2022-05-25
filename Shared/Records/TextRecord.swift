@@ -8,7 +8,7 @@
 import Foundation
 import GRDB
 
-struct TextModel: Codable, FetchableRecord, MutablePersistableRecord {
+struct TextRecord: Codable, FetchableRecord, MutablePersistableRecord {
     var id: Int64?
     var text: String
 }

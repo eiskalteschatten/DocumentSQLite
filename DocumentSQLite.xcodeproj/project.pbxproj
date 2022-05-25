@@ -15,8 +15,8 @@
 		934865E4283E1E37005497A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865CD283E1E34005497A1 /* ContentView.swift */; };
 		934865E5283E1E37005497A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934865CE283E1E37005497A1 /* Assets.xcassets */; };
 		934865E6283E1E37005497A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934865CE283E1E37005497A1 /* Assets.xcassets */; };
-		934865F0283E1F18005497A1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865EF283E1F18005497A1 /* Model.swift */; };
-		934865F1283E1F18005497A1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865EF283E1F18005497A1 /* Model.swift */; };
+		934865F0283E1F18005497A1 /* TextRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865EF283E1F18005497A1 /* TextRecord.swift */; };
+		934865F1283E1F18005497A1 /* TextRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865EF283E1F18005497A1 /* TextRecord.swift */; };
 		934865F3283E35DD005497A1 /* SqliteFileWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865F2283E35DD005497A1 /* SqliteFileWrapper.swift */; };
 		934865F4283E35DD005497A1 /* SqliteFileWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934865F2283E35DD005497A1 /* SqliteFileWrapper.swift */; };
 		934865F7283E368F005497A1 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 934865F6283E368F005497A1 /* GRDB */; };
@@ -35,7 +35,7 @@
 		934865DB283E1E37005497A1 /* DocumentSQLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentSQLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		934865DD283E1E37005497A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		934865DE283E1E37005497A1 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		934865EF283E1F18005497A1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		934865EF283E1F18005497A1 /* TextRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecord.swift; sourceTree = "<group>"; };
 		934865F2283E35DD005497A1 /* SqliteFileWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteFileWrapper.swift; sourceTree = "<group>"; };
 		934865FB283E41EB005497A1 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,8 +78,8 @@
 				934865CC283E1E34005497A1 /* DocumentSQLiteDocument.swift */,
 				934865CD283E1E34005497A1 /* ContentView.swift */,
 				934865F2283E35DD005497A1 /* SqliteFileWrapper.swift */,
-				934865EF283E1F18005497A1 /* Model.swift */,
 				934865FB283E41EB005497A1 /* DatabaseManager.swift */,
+				934865FE283E53D1005497A1 /* Records */,
 				934865CE283E1E37005497A1 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -116,6 +116,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		934865FE283E53D1005497A1 /* Records */ = {
+			isa = PBXGroup;
+			children = (
+				934865EF283E1F18005497A1 /* TextRecord.swift */,
+			);
+			path = Records;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +237,7 @@
 				934865E1283E1E37005497A1 /* DocumentSQLiteDocument.swift in Sources */,
 				934865F3283E35DD005497A1 /* SqliteFileWrapper.swift in Sources */,
 				934865E3283E1E37005497A1 /* ContentView.swift in Sources */,
-				934865F0283E1F18005497A1 /* Model.swift in Sources */,
+				934865F0283E1F18005497A1 /* TextRecord.swift in Sources */,
 				934865FC283E41EB005497A1 /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,7 +250,7 @@
 				934865E2283E1E37005497A1 /* DocumentSQLiteDocument.swift in Sources */,
 				934865F4283E35DD005497A1 /* SqliteFileWrapper.swift in Sources */,
 				934865E4283E1E37005497A1 /* ContentView.swift in Sources */,
-				934865F1283E1F18005497A1 /* Model.swift in Sources */,
+				934865F1283E1F18005497A1 /* TextRecord.swift in Sources */,
 				934865FD283E41EB005497A1 /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
