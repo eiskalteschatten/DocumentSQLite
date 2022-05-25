@@ -31,6 +31,7 @@ struct DocumentSQLiteDocument: FileDocument {
         do {
             try DatabaseQueue(path: dbPath).backup(to: inMemoryDBQueue)
         } catch {
+            // TODO: actually throw the error
 //            throw CocoaError(error)
         }
     }

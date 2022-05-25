@@ -30,7 +30,8 @@ class SqliteFileWrapper: FileWrapper {
         do {
             try databaseQueue.backup(to: destination)
         } catch {
-            throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+            // TODO: actually throw the error
+//            throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
         }
     }
 }
